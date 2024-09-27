@@ -1,9 +1,16 @@
-import { Button } from '@/components/ui/button';
+import DashboardSideMenu from '@/shared/DashboardSideMenu';
+import Navbar from '@/shared/Navbar';
+import { Outlet } from 'react-router-dom';
 
 const HomePage = () => {
     return (
         <div>
-            <Button>Click me</Button>
+            <Navbar/>
+            <div className='lg:flex lg:mr-6 lg:ml-0 mx-3 h-40'>
+                <DashboardSideMenu/>
+                <Outlet/>
+            </div>
+            
         </div>
     );
 };

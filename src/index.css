@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -26,9 +26,6 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -68,7 +65,7 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
 
 @layer base {
   :root {
@@ -128,9 +125,61 @@ button:focus-visible {
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border ;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#f5f6f7] text-foreground;
   }
+  .welcome-text {
+    @apply text-[28px] font-normal leading-[38px] text-[#8D8D8D];
+  }
+  .welcome-sub-text {
+    @apply text-[16px] font-normal leading-[22px] text-[#8D8D8D];
+  }
+  .menu-title {
+    @apply text-[11px] uppercase font-bold text-[#404040];
+  }
+  .submenu-title {
+    @apply text-[12px] text-[#484848];
+  }
+  .search-form {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .search-form i {
+    font-size: 1.25rem;
+    position: absolute;
+    left: 0;
+    top: 60%;
+    transform: translateY(-50%);
+    color: #212121;
+  }
+  .search-form svg {
+    left: auto;
+    right: 0;
+  }
+  .search-form input {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 0;
+    height: 24px;
+    padding: 0 0 0 20px;
+    position: relative;
+    transition: width 400ms ease, background 400ms ease;
+  }
+  .search-form input:focus {
+    background-color: transparent;
+    border-bottom: 1px solid #212121;
+    border-radius: 0;
+    padding-left: 30px;
+    cursor: text;
+    outline: 0;
+    width: 140px;
+  }
+  .search-form input:focus {
+    padding-right: 30px;
+    padding-left: 0;
+  }
+  
 }

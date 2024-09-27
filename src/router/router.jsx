@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { Suspense, lazy } from "react";
 import { LuLoader2 } from "react-icons/lu";
+import Dashboard from "@/pages/dashboard/Dashboard";
 
 const Loadable = (Component) => {
   const LoadableComponent = (props) => (
@@ -26,6 +27,9 @@ const ErrorBoundary = Loadable(
 const HomePage = Loadable(
   lazy(() => import("../pages/HomePage/HomePage"))
 );
+const CreateNewWarehouse = Loadable(
+  lazy(() => import("../pages/CreateNewWarehouse/CreateNewWarehouse"))
+);
 
 
 const Router = () => {
@@ -38,6 +42,16 @@ const Router = () => {
         {
           path: "/",
           element: <HomePage />,
+          children: [
+            {
+              path: "/",
+              element: <Dashboard />,
+            },
+            {
+              path: "/create-new-warehouse",
+              element: <CreateNewWarehouse />,
+            }
+          ],
         },
       ],
     },
