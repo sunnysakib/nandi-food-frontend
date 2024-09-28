@@ -1,27 +1,9 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
-import {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-  } from "@/components/ui/table"
-  
-
-import {
-    Select,
-    SelectContent,
-    SelectGroup,
-    SelectItem,
-    SelectLabel,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select"
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import {Table,TableBody,TableCaption,TableCell,TableHead,TableHeader,TableRow,} from "@/components/ui/table"
+import {Select,SelectContent,SelectGroup,SelectItem,SelectLabel,SelectTrigger,SelectValue,} from "@/components/ui/select"
 
 const CreateNewWarehouse = () => {
     return (
@@ -72,7 +54,7 @@ const CreateNewWarehouse = () => {
                 </div>
 
                 <hr />
-                <div className="grid gap-1.5">
+                <div className="grid gap-2">
                     <Label htmlFor="location">Default Location*: </Label>
                     <Select id="location">
                         <SelectTrigger className="w-full"> {/* Changed to w-full for full width */}
@@ -90,18 +72,18 @@ const CreateNewWarehouse = () => {
                 </div>
 
                 <div className="flex gap-8">
-                    <div className="flex w-full  max-w-lg flex-col">
+                    <div className="flex w-full gap-2 max-w-lg flex-col">
                         <Label htmlFor="Address1">Address1*: </Label>
                         <Input type="text" id="Address1" placeholder="7931 Coronet Road" required />
                     </div>
-                    <div className="flex w-full  max-w-lg  flex-col">
+                    <div className="flex w-full gap-2 max-w-lg  flex-col">
                         <Label htmlFor="Address2">Address2*: </Label>
                         <Input type="text" id="Address2" placeholder="" required />
                     </div>
                 </div>
 
                 <div className="flex gap-8">
-                    <div className="flex w-full  max-w-lg  flex-col">
+                    <div className="flex w-full  max-w-lg gap-2  flex-col">
                         <Label htmlFor="Address2">City*: </Label>
                         <Select id="location">
                             <SelectTrigger className="w-full"> 
@@ -116,7 +98,7 @@ const CreateNewWarehouse = () => {
                             </SelectContent>
                         </Select>
                     </div>
-                    <div className="flex w-full  max-w-lg flex-col">
+                    <div className="flex w-full  max-w-lg gap-2 flex-col">
                         <Label htmlFor="location">State/Province*:</Label>
                         <Select id="location">
                             <SelectTrigger className="w-full">
@@ -135,11 +117,11 @@ const CreateNewWarehouse = () => {
                 </div>
 
                 <div className="flex gap-8">
-                    <div className="flex w-full  max-w-lg flex-col">
+                    <div className="flex w-full gap-2 max-w-lg flex-col">
                         <Label htmlFor="Address1">Zip/Postal code*: </Label>
                         <Input type="text" id="Address1" placeholder="T6E 4N7" required />
                     </div>
-                    <div className="flex w-full  max-w-lg  flex-col">
+                    <div className="flex w-full gap-2 max-w-lg  flex-col">
                         <Label htmlFor="Address2">Country*: </Label>
                         <Select id="location">
                             <SelectTrigger className="w-full">
@@ -159,18 +141,18 @@ const CreateNewWarehouse = () => {
                 <hr />
 
                 <div className="flex gap-8">
-                    <div className="flex w-full  max-w-lg flex-col">
+                    <div className="flex w-full gap-2  max-w-lg flex-col">
                         <Label htmlFor="Address1">Email*: </Label>
                         <Input type="email" id="Address1" placeholder="info@nandifoods.com" required />
                     </div>
-                    <div className="flex w-full  max-w-lg  flex-col">
+                    <div className="flex w-full gap-2 max-w-lg  flex-col">
                         <Label htmlFor="Address2">Phone*: </Label>
                         <Input type="text" id="Address2" placeholder="+1780 328 0957" required />
                     </div>
                 </div>
 
-                <div className="flex gap-6">
-                    <div className="flex w-full  max-w-sm flex-col">
+                <div className="flex gap-8">
+                    <div className="flex w-full gap-2 max-w-sm flex-col">
                         <Label htmlFor="Address1">Mobile*: </Label>
                         <Input type="email" id="Address1" placeholder="+1 587 416 4371" required />
                     </div>
@@ -180,7 +162,7 @@ const CreateNewWarehouse = () => {
 
 
                 <div className="flex gap-8">
-                    <div className="flex w-full max-w-lg flex-col">
+                    <div className="flex w-full max-w-lg gap-2 flex-col">
                         <Label htmlFor="certificates1">Permits and Certificates 1</Label>
                         <Select id="certificates1" name="certificates1">
                             <SelectTrigger className="w-full">
@@ -197,7 +179,7 @@ const CreateNewWarehouse = () => {
                         </Select>
                     </div>
 
-                    <div className="flex w-full max-w-lg flex-col">
+                    <div className="flex w-full max-w-lg gap-2 flex-col">
                         <Label htmlFor="certificates2">Permits and Certificates 2</Label>
                         <Select id="certificates2" name="certificates2">
                             <SelectTrigger className="w-full">
@@ -216,7 +198,7 @@ const CreateNewWarehouse = () => {
                 </div>
 
                 <div className="flex gap-8">
-                    <div className="flex w-full max-w-lg flex-col">
+                    <div className="flex w-full max-w-lg gap-2 flex-col">
                         <Label htmlFor="certificates1">Permits and Certificates 3</Label>
                         <Select id="certificates1" name="certificates1">
                             <SelectTrigger className="w-full">
@@ -233,7 +215,63 @@ const CreateNewWarehouse = () => {
                         </Select>
                     </div>
 
-                    <div className="flex w-full max-w-lg flex-col">
+                    <div className="flex w-full max-w-lg gap-2 flex-col">
+                        <Label htmlFor="certificates2">Permits and Certificates 4</Label>
+                        <Select id="certificates2" name="certificates2">
+                            <SelectTrigger className="w-full">
+                                <SelectValue placeholder="Select Certificate" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectGroup>
+                                    <SelectLabel></SelectLabel>
+                                    <SelectItem value="food_safety_management"></SelectItem>
+                                    <SelectItem value="other_certificate"></SelectItem>
+                                    {/* Add more options as needed */}
+                                </SelectGroup>
+                            </SelectContent>
+                        </Select>
+                    </div>
+                </div>
+
+
+                <div className="flex gap-8">
+                    <div className="flex w-full gap-2 max-w-lg flex-col">
+                          
+                                {/* <Popover>
+                                    <PopoverTrigger asChild>
+                                    <FormControl>
+                                        <Button
+                                        variant={"outline"}
+                                        className={cn(
+                                            "w-[240px] pl-3 text-left font-normal",
+                                            !field.value && "text-muted-foreground"
+                                        )}
+                                        >
+                                        {field.value ? (
+                                            format(field.value, "PPP")
+                                        ) : (
+                                            <span>Pick a date</span>
+                                        )}
+                                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                                        </Button>
+                                    </FormControl>
+                                    </PopoverTrigger>
+                                    <PopoverContent className="w-auto p-0" align="start">
+                                    <Calendar
+                                        mode="single"
+                                        selected={field.value}
+                                        onSelect={field.onChange}
+                                        disabled={(date) =>
+                                        date > new Date() || date < new Date("1900-01-01")
+                                        }
+                                        initialFocus
+                                    />
+                                    </PopoverContent>
+                                </Popover> */}
+                               
+                    </div>
+
+                    <div className="flex w-full max-w-lg gap-2 flex-col">
                         <Label htmlFor="certificates2">Permits and Certificates 4</Label>
                         <Select id="certificates2" name="certificates2">
                             <SelectTrigger className="w-full">
