@@ -40,7 +40,7 @@ const CreateNewWarehouse = () => {
         setFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
     };
     return (
-        <div className="flex flex-col justify-start items-left w-full p-6 bg-yellow-300 min-h-screen">
+        <div className="flex flex-col justify-start items-left w-full p-6  min-h-screen">
             <h1 className="text-2xl font-bold mb-4">Add New Employee</h1>
 
             <div className="flex gap-6 w-full ">
@@ -64,12 +64,12 @@ const CreateNewWarehouse = () => {
                     </div>
                 </div>
 
-                <div className="grid gap-1.5">
+                <div className="grid gap-2">
                     <Label htmlFor="Employee">Position*: </Label>
                     <Input type="text" id="employee_no" placeholder="EE003" required />
                 </div>
 
-                <div className="grid gap-1.5">
+                <div className="grid gap-2">
                     <Label htmlFor="fruit">Position*: </Label>
                     <Select id="fruit">
                         <SelectTrigger className="w-full"> {/* Changed to w-full for full width */}
