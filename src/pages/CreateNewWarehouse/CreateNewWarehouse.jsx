@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -5,7 +7,38 @@ import { Button } from "@/components/ui/button";
 import {Table,TableBody,TableCaption,TableCell,TableHead,TableHeader,TableRow,} from "@/components/ui/table"
 import {Select,SelectContent,SelectGroup,SelectItem,SelectLabel,SelectTrigger,SelectValue,} from "@/components/ui/select"
 
+/* image piker */
+
+/* image piker end */
 const CreateNewWarehouse = () => {
+
+    const [files, setFiles] = useState([]);
+    const handleFileChange = (event) => {
+        const selectedFiles = Array.from(event.target.files);
+        if (selectedFiles.length + files.length > 3) {
+            alert("You can only upload a maximum of 3 photos.");
+            return;
+        }
+        setFiles((prevFiles) => [...prevFiles, ...selectedFiles]);
+    };
+
+    const handleDrop = (event) => {
+        event.preventDefault();
+        const droppedFiles = Array.from(event.dataTransfer.files);
+        if (droppedFiles.length + files.length > 3) {
+            alert("You can only upload a maximum of 3 photos.");
+            return;
+        }
+        setFiles((prevFiles) => [...prevFiles, ...droppedFiles]);
+    };
+
+    const handleDragOver = (event) => {
+        event.preventDefault();
+    };
+
+    const removeFile = (index) => {
+        setFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
+    };
     return (
         <div className="flex flex-col justify-start items-left w-full p-6 bg-yellow-300 min-h-screen">
             <h1 className="text-2xl font-bold mb-4">Add New Employee</h1>
@@ -294,8 +327,41 @@ const CreateNewWarehouse = () => {
               
                 </div>
                 <div className="grid gap-1.5 w-1/2">
-                    <Label htmlFor="Employee">Employee No.*: </Label>
-                    <Input type="text" id="employee_no" placeholder="EE003" required />
+                <fieldset
+                        className="upload_dropZone text-center mb-3 p-4"
+                        onDrop={handleDrop}
+                        onDragOver={handleDragOver}
+                    >
+                        <div className="w-100">
+                        <legend className="visually-hidden">Upload Waarehouse Photos here </legend>
+                        <svg className="upload_svg" width="60" height="60" aria-hidden="true">
+                            <use href="#icon-imageUpload"></use>
+                        </svg>
+                        <p className="small my-2">
+                            Drag &amp; Drop background image(s) inside dashed region<br />
+                            (Can upload 3 photos max) <br /><i>or</i>
+                        </p>
+                        <input
+                            id="upload_image_background"
+                            data-post-name="image_background"
+                            data-post-url="https://someplace.com/image/uploads/backgrounds/"
+                            className="position-absolute invisible"
+                            type="file"
+                            multiple
+                            accept="image/jpeg, image/png, image/svg+xml"
+                            onChange={handleFileChange}
+                        />
+                        <label className="btn btn-upload mb-3" htmlFor="upload_image_background">Choose file(s)</label>
+                        </div>
+                        <div className="upload_gallery d-flex flex-wrap justify-content-center gap-3 mb-0">
+                        {files.map((file, index) => (
+                            <div key={index} className="uploaded-image">
+                            <img src={URL.createObjectURL(file)} alt={`Uploaded preview ${index}`} className="img-thumbnail" />
+                            <button type="button" onClick={() => removeFile(index)}>Remove</button>
+                            </div>
+                        ))}
+                        </div>
+                    </fieldset>
                 </div>
             </div>
 
@@ -320,12 +386,12 @@ const CreateNewWarehouse = () => {
                 <div className="flex  my-3 bg-white p-6 rounded-md ">
                     <Table>
                         {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
-                        <TableHeader className="bg-green-900">
+                        <TableHeader className="bg-green-900 ">
                             <TableRow>
-                                <TableHead className="w-[30%]">File Name</TableHead>
-                                <TableHead className="w-[30%]">Date Uploaded</TableHead>
-                                <TableHead className="w-[20%]">Uploaded By</TableHead>
-                                <TableHead className="w-[20%]"></TableHead>
+                                <TableHead className="w-[30%] text-white">File Name</TableHead>
+                                <TableHead className="w-[30%] text-white">Date Uploaded</TableHead>
+                                <TableHead className="w-[20%] text-white">Uploaded By</TableHead>
+                                <TableHead className="w-[20%] text-white"></TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
