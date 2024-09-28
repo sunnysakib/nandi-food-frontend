@@ -8,7 +8,7 @@ import {
 
 const DashboardSideMenu = () => {
     return (
-        <div className="lg:block w-[17rem] hidden ">
+        <div className="lg:block w-[16rem] hidden ">
             <Link to="/" className="">
                 <h3 className="bg-white rounded-r-full text-[#186A39]  text-base font-semibold py-2 pl-7 ">Dashboard</h3>
             </Link>

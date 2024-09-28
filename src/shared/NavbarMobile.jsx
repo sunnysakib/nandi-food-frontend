@@ -1,79 +1,144 @@
-import React from "react";
-import { FaBars } from "react-icons/fa";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import {
-    NavigationMenu,
-    NavigationMenuItem,
-    NavigationMenuList,
-  } from "@/components/ui/navigation-menu";
-  import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-  } from "@/components/ui/popover";
-  import { ChevronDownIcon } from "@radix-ui/react-icons";
-import { Button } from "../ui/button";
+
+
+
+import {  HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
+
 const NavbarMobile = () => {
   return (
     <div className="lg:hidden md:block">
-      <Sheet className="bg-slate-800">
-        <SheetTrigger>
-          <FaBars className="text-xl text-slate-400 hover:text-slate-200" />
+      <Sheet >
+        <SheetTrigger><HamburgerMenuIcon className="size-4 cursor-pointer" />
         </SheetTrigger>
-        <SheetContent className="bg-gray-primary border-none">
-          <SheetHeader>
-            <div className="pt-8">
-              <div className="text-white text-base flex flex-col gap-y-2">
-                <Button variant="none">
-                  <Link to="/signin">Signin</Link>
-                </Button>
-                <Button className="bg-yellow-400 text-black hover:bg-yellow-500">
-                  <Link to="/signup">Signup</Link>
-                </Button>
-              </div>
+        <SheetContent className="bg-[#f5f6f7] p-0">
+        <div className="mt-8">
+            <Link to="/" className="">
+                <h3 className="bg-white text-[#186A39]  text-base font-semibold py-2 pl-4">Dashboard</h3>
+            </Link>
+            <div className="mt-6">
+                <p className="menu-title pl-4 ">Inventory Management</p>
+                <div className="mt-2">
+                    <Accordion type="single" className="hover:text-[#186A39] mb-1" collapsible>
+                        <AccordionItem value="item-1">
+                            <AccordionTrigger className="submenu-title">Warehouses</AccordionTrigger>
+                            <AccordionContent>
+                                <ul className="submenu-title list-disc list-inside pl-5 flex flex-col gap-y-3 text-[#484848]">
 
-              <NavigationMenu className="pt-4">
-                <NavigationMenuList>
-                  <NavigationMenuItem className="flex flex-col gap-y-4 text-left text-[1rem] text-slate-400">
-                    <Link className="hover:text-slate-200" to="/markets">
-                      Markets
-                    </Link>
-                    <Link className="hover:text-slate-200" to="/trade">
-                      Trade
-                    </Link>
-                    <Link to="/arbitrage" className="hover:text-slate-200" >
-                      Arbitrage
-                    </Link>
-                    <Popover>
-                      <PopoverTrigger className="flex gap-1 items-center hover:text-slate-200">
-                        Explore <ChevronDownIcon />
-                      </PopoverTrigger>
-                      <PopoverContent className="flex flex-col w-fit px-0">
-                        <Link className="link-hover" to="/stack">
-                          Stack
-                        </Link>
-                        <Link className="link-hover" to="/convert">
-                          Convert
-                        </Link>
-                        <Link to='/bundle-buy' className="link-hover" >
-                          Bundle Buy
-                        </Link>
-                        <Link className="link-hover" to="/p2p">
-                          P2P
-                        </Link>
-                      </PopoverContent>
-                    </Popover>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
+                                    <li> <Link to="/warehouses">Warehouse List</Link>
+                                    </li>
+                                    <li> <Link to="/create-new-warehouse">Create New Warehouse</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">Warehouse Details</Link>
+                                    </li>
+
+                                </ul>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                    <Accordion type="single" className="hover:text-[#186A39] mb-1" collapsible>
+                        <AccordionItem value="item-2">
+                            <AccordionTrigger className="submenu-title">Products</AccordionTrigger>
+                            <AccordionContent>
+                                <ul className="submenu-title list-disc list-inside pl-5 flex flex-col gap-y-3 text-[#484848]">
+
+                                    <li> <Link to="/warehouses">Products</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">Products List</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">Create New Product</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">Product Details</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">Price List</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">Add New Price List</Link>
+                                    </li>
+
+                                </ul>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                </div>
             </div>
-          </SheetHeader>
+
+            <div className="mt-6">
+                <p className="menu-title pl-4 ">Inventory Processing</p>
+                <div className="mt-2">
+                    <Accordion type="single" className="hover:text-[#186A39] mb-1" collapsible>
+                        <AccordionItem value="item-1">
+                            <AccordionTrigger className="submenu-title">Goods Received Notes (GRN)</AccordionTrigger>
+                            <AccordionContent>
+                                <ul className="submenu-title list-disc list-inside pl-5 flex flex-col gap-y-3 text-[#484848]">
+
+                                    <li> <Link to="/warehouses">GRN List</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">Create New GRN</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">GRN Details</Link>
+                                    </li>
+
+                                </ul>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                    <Accordion type="single" className="hover:text-[#186A39] mb-1" collapsible>
+                        <AccordionItem value="item-2">
+                            <AccordionTrigger className="submenu-title">Goods Transfer Notes (GTN)</AccordionTrigger>
+                            <AccordionContent>
+                                <ul className="submenu-title list-disc list-inside pl-5 flex flex-col gap-y-3 text-[#484848]">
+
+                                    <li> <Link to="/warehouses">GTN List</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">Create New GTN</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">Create New Product</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">GRN Details</Link>
+                                    </li>
+                                </ul>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                    <Accordion type="single" className="hover:text-[#186A39] mb-1" collapsible>
+                        <AccordionItem value="item-2">
+                            <AccordionTrigger className="submenu-title">Damaged Goods Note (DGN)</AccordionTrigger>
+                            <AccordionContent>
+                                <ul className="submenu-title list-disc list-inside pl-5 flex flex-col gap-y-3 text-[#484848]">
+
+                                    <li> <Link to="/warehouses">DGN List</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">Create New DGN</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">Create New Product</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">DGN Details</Link>
+                                    </li>
+                                </ul>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                    <Accordion type="single" className="hover:text-[#186A39] mb-1" collapsible>
+                        <AccordionItem value="item-2">
+                            <AccordionTrigger className="submenu-title">Production Orders (PRD)</AccordionTrigger>
+                            <AccordionContent>
+                                <ul className="submenu-title list-disc list-inside pl-5 flex flex-col gap-y-3 text-[#484848]">
+
+                                    <li> <Link to="/warehouses">PRD List</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">Create New PRD Order</Link>
+                                    </li>
+                                    <li> <Link to="/warehouses">PRD Details</Link>
+                                    </li>
+                                    
+                                </ul>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                </div>
+            </div>
+        </div>
         </SheetContent>
       </Sheet>
     </div>
