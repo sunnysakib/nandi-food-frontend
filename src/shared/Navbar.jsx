@@ -43,7 +43,7 @@ const Navbar = () => {
   }).format(currentTime);
 
   return (
-    <nav className="lg:px-6 px-3 py-5 lg:flex bg-[#f5f6f7] fixed top-0 left-0 right-0 z-20">
+    <nav className="lg:px-6 px-3 py-5 lg:flex bg-[#f5f6f7] sticky top-0 left-0 right-0 z-20">
       <div className="lg:block w-60 hidden ">
         <Image src="../../public/assets/logo/logo-horizontal.png" alt="logo" width={80} />
       </div>

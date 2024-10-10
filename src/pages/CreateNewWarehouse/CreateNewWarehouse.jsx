@@ -1,5 +1,4 @@
 
-
 import { Button } from "@/components/ui/button";
 import { Download, Printer, RotateCcw, Settings, Share2 } from "lucide-react";
 import Content from "./_components/Content";
@@ -10,7 +9,7 @@ const CreateNewWarehouse = () => {
         <>
             <div className="w-full lg:pl-14 mt-3">
                 <div className="flex justify-between gap-4 flex-wrap">
-                    <h1 className="text-[26px]">Create New Products</h1>
+                    <h2>Create New Warehouse</h2>
                     <div className="flex gap-3 flex-wrap">
                         <Button size="sm" variant="outline" className="border-green-700 !px-5 text-[12px] rounded-lg ">
                             <Share2 className="mr-2 size-4" />
@@ -38,7 +37,7 @@ const CreateNewWarehouse = () => {
 
                 <Content />
             </div>
-           
+
         </>
 
 

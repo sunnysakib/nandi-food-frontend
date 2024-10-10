@@ -24,6 +24,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Separator } from "@/components/ui/separator";
 import WarehouseNotes from "./WarehouseNotes";
 import EmployeeList from "./EmployeeList";
+import BinLocations from "./BinLocations";
 
 const FormCustomField = () => {
     const [date, setDate] = useState()
@@ -32,7 +33,7 @@ const FormCustomField = () => {
             <form className="flex flex-col gap-6">
                 <div className="grid grid-cols-2 gap-8">
                     <div className="grid w-full col-span-2 items-center gap-1.5">
-                        <Label htmlFor="entity">Entity*</Label>
+                        <Label className="" htmlFor="entity">Entity*</Label>
                         <Select >
                             <SelectTrigger className="border">
                                 <SelectValue placeholder="Nandi Food" />
@@ -274,11 +275,11 @@ const FormCustomField = () => {
             </div>
             <div className="col-span-2">
                 <Tabs defaultValue="Warehouse-Notes" className="">
-                    <TabsList className="bg-transparent rounded-none ">
+                    <TabsList className="bg-transparent rounded-none">
                         <div className="flex flex-wrap items-center space-x-4 text-sm">
-                        <TabsTrigger className="" value="Warehouse-Notes">Warehouse Notes</TabsTrigger>
+                            <TabsTrigger className="" value="Warehouse-Notes">Warehouse Notes</TabsTrigger>
                             <Separator className="h-10" orientation="vertical" />
-                            <TabsTrigger  value="bin">Bin Locations</TabsTrigger>
+                            <TabsTrigger value="bin-locations">Bin Locations</TabsTrigger>
                             <Separator className="h-10" orientation="vertical" />
                             <TabsTrigger value="str">Storage Capacity</TabsTrigger>
                             <Separator className="h-10" orientation="vertical" />
@@ -286,13 +287,16 @@ const FormCustomField = () => {
                             <Separator className="h-10" orientation="vertical" />
                             <TabsTrigger value="Compilence">Compilence</TabsTrigger>
                         </div>
-                        
+
                     </TabsList>
-                    <TabsContent value="Warehouse-Notes"><WarehouseNotes/></TabsContent>
-                    <TabsContent value="bin">Change your password here.</TabsContent>
+
+                    <TabsContent value="Warehouse-Notes"><WarehouseNotes /></TabsContent>
+
+
+                    <TabsContent value="bin-locations"><BinLocations /></TabsContent>
                     <TabsContent value="str">Storage</TabsContent>
-                    <TabsContent value="people"><EmployeeList/></TabsContent>
-                    <TabsContent value="Compilence"><WarehouseNotes/></TabsContent>
+                    <TabsContent value="people"><EmployeeList /></TabsContent>
+                    <TabsContent value="Compilence"><WarehouseNotes /></TabsContent>
                 </Tabs>
                 <div className="flex justify-end space-x-2 mt-6">
                     <Button type="submit" variant="destructive" className=" rounded-full">Cancel</Button>

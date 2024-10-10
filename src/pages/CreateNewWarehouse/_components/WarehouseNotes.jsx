@@ -22,7 +22,7 @@ const WarehouseNotes = () => {
 
                 <Table className="border">
                     <TableHeader>
-                        <TableRow className="bg-green-800 hover:bg-green-800 ">
+                        <TableRow className="bg-green-800">
                             <TableHead className="text-white text-[15px]" >File Name</TableHead>
                             <TableHead className="text-white text-[15px]">Date Uploaded</TableHead>
                             <TableHead className=" text-white text-[15px]">Uploaded by</TableHead>

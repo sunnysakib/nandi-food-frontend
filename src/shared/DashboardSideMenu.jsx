@@ -9,13 +9,14 @@ import {
 const DashboardSideMenu = () => {
     return (
         <div className="lg:block w-[16rem] hidden ">
-            <Link to="/" className="">
+            <Link to="/">
                 <h3 className="bg-white rounded-r-full text-[#186A39]  text-base font-semibold py-2 pl-7 ">Dashboard</h3>
             </Link>
+            {/* Inventory Management */}
             <div className="mt-6">
                 <p className="menu-title pl-4 ">Inventory Management</p>
                 <div className="mt-2">
-                    <Accordion type="single" className="hover:text-[#186A39] mb-1" collapsible>
+                    <Accordion type="single" className="hover:text-primary mb-1" collapsible>
                         <AccordionItem value="item-1">
                             <AccordionTrigger className="submenu-title">Warehouses</AccordionTrigger>
                             <AccordionContent>
@@ -57,16 +58,15 @@ const DashboardSideMenu = () => {
                     </Accordion>
                 </div>
             </div>
-
+            {/* Inventory Processing */}
             <div className="mt-6">
                 <p className="menu-title pl-4 ">Inventory Processing</p>
                 <div className="mt-2">
-                    <Accordion type="single" className="hover:text-[#186A39] mb-1" collapsible>
+                    <Accordion type="single" className="hover:text-primary mb-1" collapsible>
                         <AccordionItem value="item-1">
                             <AccordionTrigger className="submenu-title">Goods Received Notes (GRN)</AccordionTrigger>
                             <AccordionContent>
                                 <ul className="submenu-title list-disc list-inside pl-5 flex flex-col gap-y-3 text-[#484848]">
-
                                     <li> <Link to="/warehouses">GRN List</Link>
                                     </li>
                                     <li> <Link to="/warehouses">Create New GRN</Link>
@@ -78,7 +78,7 @@ const DashboardSideMenu = () => {
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
-                    <Accordion type="single" className="hover:text-[#186A39] mb-1" collapsible>
+                    <Accordion type="single" className="hover:text-primary mb-1" collapsible>
                         <AccordionItem value="item-2">
                             <AccordionTrigger className="submenu-title">Goods Transfer Notes (GTN)</AccordionTrigger>
                             <AccordionContent>
@@ -96,7 +96,7 @@ const DashboardSideMenu = () => {
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
-                    <Accordion type="single" className="hover:text-[#186A39] mb-1" collapsible>
+                    <Accordion type="single" className="hover:text-primary mb-1" collapsible>
                         <AccordionItem value="item-2">
                             <AccordionTrigger className="submenu-title">Damaged Goods Note (DGN)</AccordionTrigger>
                             <AccordionContent>
@@ -114,7 +114,7 @@ const DashboardSideMenu = () => {
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
-                    <Accordion type="single" className="hover:text-[#186A39] mb-1" collapsible>
+                    <Accordion type="single" className="hover:text-primary mb-1" collapsible>
                         <AccordionItem value="item-2">
                             <AccordionTrigger className="submenu-title">Production Orders (PRD)</AccordionTrigger>
                             <AccordionContent>
